@@ -2,6 +2,9 @@
 
 namespace AncillaryExtensions
 {
+    /// <summary>
+    /// Extensions to the <see cref="string"/> class.
+    /// </summary>
     public static class StringExtensions
     {
         /// <summary>
