@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AncillaryExtensions
 {
@@ -98,6 +100,19 @@ namespace AncillaryExtensions
             var lastPart = source.Substring(start + count);
             var middlePart = new string(maskValue, count);
             return firstPart + middlePart + lastPart;
+        }
+
+        /// <summary>
+        /// Returns a sequence of strings that contains the substrings in this instance that are delimitted by
+        /// elements of a specified Unicode character array and with leading and trailing white-space characters removed.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="separator">An array of Unicode characters that delimit the substrings in this instance,
+        /// an empty array that contains no delimiters, or null.</param>
+        /// <returns></returns>
+        public static IEnumerable<string> SplitAndTrim(this string source, params char[] separator)
+        {
+            return source.Split(separator).Select(x => x.Trim());
         }
     }
 }
