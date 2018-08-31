@@ -56,7 +56,7 @@ namespace AncillaryExtensions
         /// </summary>
         /// <example>************7788</example>
         /// <param name="source"></param>
-        /// <param name="count">The maximum number of characters to remain showing at the end of the given string.</param>
+        /// <param name="count">The maximum number of characters on the right to leave unmasked.</param>
         /// <returns></returns>
         public static string MaskLeft(this string source, int count)
         {
@@ -71,7 +71,7 @@ namespace AncillaryExtensions
         /// </summary>
         /// <example>112233**********</example>
         /// <param name="source"></param>
-        /// <param name="count"></param>
+        /// <param name="count">The maximum number of characters on the left to leave unmasked.</param>
         /// <returns></returns>
         public static string MaskRight(this string source, int count)
         {
@@ -83,7 +83,7 @@ namespace AncillaryExtensions
         }
 
         /// <summary>
-        /// 
+        /// Mask characters of a string.
         /// </summary>
         /// <param name="source"></param>
         /// <param name="maskValue"></param>
