@@ -2,9 +2,14 @@
 
 A collection of extension methods.
 
-## Download
+## Install AncillaryExtensions via Nuget
 
-Add AncillaryExtensions to your .Net project using the [Nuget package](https://www.nuget.org/packages/ancillaryextensions).
+If you want to include AncillaryExtensions in your project, you can [install it directly from NuGet](https://www.nuget.org/packages/ancillaryextensions)
+
+To install AncillaryExtensions, run the following command in the Package Manager Console
+```
+PM> Install-Package AncillaryExtensions
+```
 
 ## IEnumerableExtensions
 
@@ -78,4 +83,13 @@ Mask characters in a string.
 
 ```C#
 var actual = "1234567890".Mask('*', 2, 4); // Returns "12****7890"
+```
+
+### Replace
+
+Replace named group in regex with value
+
+```C#
+var regex = new Regex(@".*_(?<id>\d+)_.*", RegexOptions.IgnoreCase);
+var actual = "abc_123_def".Replace(regex, "id", "456"); // Returns "abc_456_def"
 ```

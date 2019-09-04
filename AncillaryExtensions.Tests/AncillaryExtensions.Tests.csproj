@@ -57,6 +57,7 @@
     <Compile Include="StringExtensionsTests\MaskRightShould.cs" />
     <Compile Include="StringExtensionsTests\MaskShould.cs" />
     <Compile Include="StringExtensionsTests\SplitAndTrimShould.cs" />
+    <Compile Include="StringExtensionsTests\ReplaceShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

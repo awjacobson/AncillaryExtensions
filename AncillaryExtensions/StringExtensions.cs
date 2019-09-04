@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace AncillaryExtensions
 {
@@ -113,6 +114,33 @@ namespace AncillaryExtensions
         public static IEnumerable<string> SplitAndTrim(this string source, params char[] separator)
         {
             return source.Split(separator).Select(x => x.Trim());
+        }
+
+        /// <summary>
+        /// Replace named group in regex with value
+        /// </summary>
+        /// <remarks>
+        /// https://stackoverflow.com/a/13342795
+        /// </remarks>
+        /// <param name="input"></param>
+        /// <param name="regex"></param>
+        /// <param name="groupName"></param>
+        /// <param name="replacement"></param>
+        /// <returns></returns>
+        public static string Replace(this string input, Regex regex, string groupName, string replacement)
+        {
+            return regex.Replace(input, m =>
+            {
+                return ReplaceNamedGroup(input, groupName, replacement, m);
+            });
+        }
+
+        private static string ReplaceNamedGroup(string input, string groupName, string replacement, Match m)
+        {
+            string capture = m.Value;
+            capture = capture.Remove(m.Groups[groupName].Index - m.Index, m.Groups[groupName].Length);
+            capture = capture.Insert(m.Groups[groupName].Index - m.Index, replacement);
+            return capture;
         }
     }
 }
