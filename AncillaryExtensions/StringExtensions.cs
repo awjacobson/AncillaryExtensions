@@ -131,11 +131,11 @@ namespace AncillaryExtensions
         {
             return regex.Replace(input, m =>
             {
-                return ReplaceNamedGroup(input, groupName, replacement, m);
+                return ReplaceNamedGroup(groupName, replacement, m);
             });
         }
 
-        private static string ReplaceNamedGroup(string input, string groupName, string replacement, Match m)
+        private static string ReplaceNamedGroup(string groupName, string replacement, Match m)
         {
             string capture = m.Value;
             capture = capture.Remove(m.Groups[groupName].Index - m.Index, m.Groups[groupName].Length);
