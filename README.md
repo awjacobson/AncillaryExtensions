@@ -43,6 +43,23 @@ myString = anyString.Left(7); // Returns "Hello W"
 myString = anyString.Left(20); // Returns "Hello World"
 ```
 
+### Right
+
+Returns a string containing a specified number of characters from the right side of a string.
+
+#### Example
+
+This example uses the Right method to return a specified number of characters from
+the right side of a string.
+
+```C#
+String myString;
+var anyString = "Hello World";
+myString = anyString.Right(1); // Returns "Hd"
+myString = anyString.Right(7); // Returns "o World"
+myString = anyString.Right(20); // Returns "Hello World"
+```
+
 ### TrimEnd
 
 Removes the specified string from the end of the current string object.
@@ -88,6 +105,8 @@ var actual = "1234567890".Mask('*', 2, 4); // Returns "12****7890"
 ### Replace
 
 Replace named group in regex with value
+
+#### Example
 
 ```C#
 var regex = new Regex(@".*_(?<id>\d+)_.*", RegexOptions.IgnoreCase);
