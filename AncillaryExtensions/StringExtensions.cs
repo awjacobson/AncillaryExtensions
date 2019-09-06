@@ -36,6 +36,27 @@ namespace AncillaryExtensions
         }
 
         /// <summary>
+        /// Returns a string containing a specified number of characters from the
+        /// right side of a string.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="maxLength">
+        /// Integer indicating how many characters to return.
+        /// If 0, a zero-length string ("") is returned. If greater than or equal to
+        /// the number of characters in string, the entire string is returned.
+        /// </param>
+        /// <returns></returns>
+        public static string Right(this string value, int maxLength)
+        {
+            if (string.IsNullOrEmpty(value)) return value;
+            maxLength = Math.Abs(maxLength);
+
+            return (value.Length > maxLength)
+                ? value.Substring(value.Length - maxLength, maxLength)
+                : value;
+        }
+
+        /// <summary>
         /// Removes string from the end of the current <see cref="String"/> object.
         /// </summary>
         /// <remarks>

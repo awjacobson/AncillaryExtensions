@@ -55,6 +55,7 @@
     <Compile Include="StringExtensionsTests\MaskRightShould.cs" />
     <Compile Include="StringExtensionsTests\MaskShould.cs" />
     <Compile Include="StringExtensionsTests\ReplaceShould.cs" />
+    <Compile Include="StringExtensionsTests\RightShould.cs" />
     <Compile Include="StringExtensionsTests\SplitAndTrimShould.cs" />
     <Compile Include="StringExtensionsTests\TrimEndShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
